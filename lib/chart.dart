@@ -9,7 +9,7 @@ class Chart extends StatelessWidget {
       final weekDay = DateTime.now().subtract(
         Duration(days: index),
       );
-      return {'day'};
+      return {};
     });
   }
 
