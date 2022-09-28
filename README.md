@@ -12,4 +12,7 @@ We must add transaction title,amount.title should not be empty and amount should
 
 ![WhatsApp Image 2022-09-28 at 6 56 41 PM (1)](https://user-images.githubusercontent.com/84428101/192793980-d9ed5be2-1fd6-45b2-acec-4e35d033f51b.jpeg)
 
+We can choose date from calendar:
+
+![WhatsApp Image 2022-09-28 at 6 56 41 PM (2)](https://user-images.githubusercontent.com/84428101/192794400-cdd9acab-1459-4639-a8d2-d01d322b0f6b.jpeg)
 
