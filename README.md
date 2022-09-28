@@ -20,4 +20,7 @@ After choosing the date we can see the transaction list is updated.
 
 ![WhatsApp Image 2022-09-28 at 6 56 41 PM (3)](https://user-images.githubusercontent.com/84428101/192795004-d098e923-a996-4612-9c05-4b793fc9aeee.jpeg)
 
+WE can even delete transactions we want the transactions will be shown in the chart bar above transaction list.
+
+![WhatsApp Image 2022-09-28 at 6 56 42 PM](https://user-images.githubusercontent.com/84428101/192796004-297cba34-02c3-4113-957b-ba890b01c91a.jpeg)
 
