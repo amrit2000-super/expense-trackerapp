@@ -12,7 +12,12 @@ We must add transaction title,amount.title should not be empty and amount should
 
 ![WhatsApp Image 2022-09-28 at 6 56 41 PM (1)](https://user-images.githubusercontent.com/84428101/192793980-d9ed5be2-1fd6-45b2-acec-4e35d033f51b.jpeg)
 
-We can choose date from calendar:
+We can choose date from calendar,otherwise tranaction wont be added:
 
 ![WhatsApp Image 2022-09-28 at 6 56 41 PM (2)](https://user-images.githubusercontent.com/84428101/192794400-cdd9acab-1459-4639-a8d2-d01d322b0f6b.jpeg)
+
+After choosing the date we can see the transaction list is updated.
+
+![WhatsApp Image 2022-09-28 at 6 56 41 PM (3)](https://user-images.githubusercontent.com/84428101/192795004-d098e923-a996-4612-9c05-4b793fc9aeee.jpeg)
+
 
