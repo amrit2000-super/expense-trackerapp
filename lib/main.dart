@@ -1,10 +1,14 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_app/new_transaction.dart';
 import 'package:flutter_complete_app/transactionlist.dart';
 import './transaction.dart';
-import 'package:intl/intl.dart';
+import './chart.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
 
@@ -33,12 +37,28 @@ class _MyAppState extends State<MyApp> {
         });
   }
 
+  void _deleteTransactions(String title) {
+    setState(() {
+      userTransactions.removeWhere((tx) => (tx.title == title));
+    });
+  }
+
+  List<Transactions> get recentTransactions {
+    return userTransactions.where((tx) {
+      return tx.date.isAfter(DateTime.now().subtract(
+        Duration(days: 50),
+      ));
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.purple,
             accentColor: Colors.purple,
+            errorColor: Colors.red,
             fontFamily: 'Quicksand'),
         home: Scaffold(
           appBar: AppBar(
@@ -53,18 +73,17 @@ class _MyAppState extends State<MyApp> {
                       })),
             ],
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                child: Card(
-                  color: Colors.blue,
-                  child: Text('CHART!!'),
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Chart(recentTransactions),
+                SizedBox(
+                  height: 70,
                 ),
-                width: double.infinity,
-              ),
-              TransactionList(userTransactions),
-            ],
+                TransactionList(userTransactions, _deleteTransactions),
+              ],
+            ),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,

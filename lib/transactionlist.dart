@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import './transaction.dart';
 import 'package:intl/intl.dart';
+import './main.dart';
 
 class TransactionList extends StatelessWidget {
   List<Transactions> userTransactions = [];
-  TransactionList(this.userTransactions);
+  final Function deleteTransactions;
+  TransactionList(this.userTransactions, this.deleteTransactions);
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
+        height: MediaQuery.of(context).size.height * 0.6,
         child: userTransactions.isEmpty
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,33 +30,26 @@ class TransactionList extends StatelessWidget {
             : ListView.builder(
                 itemBuilder: (ctx, index) {
                   return Card(
-                      child: Row(children: <Widget>[
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                      child: Text(
-                          userTransactions[index].amount.toString() + '/-',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Color.fromARGB(255, 112, 18, 128))),
-                      decoration: BoxDecoration(
-                          border: Border.all(width: 2, color: Colors.purple)),
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          userTransactions[index].title,
-                          style: TextStyle(
-                              fontStyle: FontStyle.italic, color: Colors.black),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text('${userTransactions[index].amount}'),
                         ),
-                        Text(
-                          DateFormat().format(userTransactions[index].date),
-                          style: TextStyle(
-                              fontStyle: FontStyle.italic, color: Colors.black),
-                        )
-                      ],
-                    )
-                  ]));
+                        radius: 50,
+                      ),
+                      title: Text(userTransactions[index].title),
+                      subtitle: Text(DateFormat('dd-MM-yyyy')
+                          .format(userTransactions[index].date)),
+                      trailing: Builder(
+                          builder: (context) => IconButton(
+                                icon: Icon(Icons.delete),
+                                onPressed: () => deleteTransactions(
+                                    userTransactions[index].title),
+                                color: Theme.of(context).errorColor,
+                              )),
+                    ),
+                  );
                 },
                 itemCount: userTransactions.length,
               ));
