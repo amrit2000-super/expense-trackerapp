@@ -1,16 +1,2 @@
-# flutter_complete_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is how I created the app.
+Initially ,as the app opens it looks like this:![WhatsApp Image 2022-09-28 at 6 56 40 PM](https://user-images.githubusercontent.com/84428101/192792101-6bb53f8e-f392-464f-ac93-6039abb012a9.jpeg)
