@@ -24,3 +24,6 @@ WE can even delete transactions we want the transactions will be shown in the ch
 
 ![WhatsApp Image 2022-09-28 at 6 56 42 PM](https://user-images.githubusercontent.com/84428101/192796004-297cba34-02c3-4113-957b-ba890b01c91a.jpeg)
 
+After removing all transactions,the transaction list is:
+
+![WhatsApp Image 2022-09-28 at 6 56 42 PM (1)](https://user-images.githubusercontent.com/84428101/192796696-a91cc731-ee00-42a6-9228-a45c4870f18a.jpeg)
